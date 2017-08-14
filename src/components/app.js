@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Canvas from "./canvas";
+import TextCanvas from "./textCanvas";
+import ImageCanvas from "./imageCanvas";
+import SaveCanvas from "./saveCanvas";
+
 
 export default class App extends Component {
 
@@ -55,8 +58,9 @@ export default class App extends Component {
               onChange={this.handleTextChange} />
         </div>
 
-
-        <Canvas image={this.state} />
+        <ImageCanvas image={this.state.imagePreviewUrl} />
+        <TextCanvas textCont={this.state.textContent} />
+        <SaveCanvas />
       </div>
     );
   }
